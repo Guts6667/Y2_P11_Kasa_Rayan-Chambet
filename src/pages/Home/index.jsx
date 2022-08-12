@@ -3,7 +3,7 @@ import React from 'react';
 import Hero from '../../components/Hero';
 import styled from 'styled-components';
 import Cards from '../../components/Cards/Cards';
-import datas from '../../datas/logements.json'
+// import datas from '../../datas/logements.json'
 import colors from '../../utils/color';
 
 const HomeWrapper = styled.div`
@@ -22,17 +22,15 @@ background-color: ${colors.secondary};
 padding: 20px;
 `
 function Home(){
+
     return(
         <HomeWrapper>
             <Hero />
             <CardWrapper>
-            {datas.map((data=> (
-                <Cards key={`${data.title}-${data.id}`}
-                title = {data.title}
-                img = {data.cover}
-            />)))};
+            <Cards />
             </CardWrapper>
         </HomeWrapper>
     )
 }
+
 export default Home;
