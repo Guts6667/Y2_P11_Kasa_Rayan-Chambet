@@ -21,6 +21,7 @@ function Apartment(){
     const myApartment = datas.filter(data => data.id === location.state)
     console.log(myApartment);
     const {id, title, cover} = myApartment[0];
+    console.log(id);
     
 
     return(

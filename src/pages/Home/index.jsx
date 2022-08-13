@@ -22,11 +22,6 @@ background-color: ${colors.secondary};
 padding: 20px;
 `
 function Home(){
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> main
     return(
         <HomeWrapper>
             <Hero />
