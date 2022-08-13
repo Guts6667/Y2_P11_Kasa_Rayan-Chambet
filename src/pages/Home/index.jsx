@@ -6,6 +6,8 @@ import Cards from '../../components/Cards/Cards';
 // import datas from '../../datas/logements.json'
 import colors from '../../utils/color';
 
+// Voir avec Ryade comment modifier l'url de manière à afficher le nom de l'appartement
+
 const HomeWrapper = styled.div`
 display: flex;
 align-items: center;
