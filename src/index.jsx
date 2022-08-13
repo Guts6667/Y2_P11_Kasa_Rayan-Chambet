@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import { createGlobalStyle } from 'styled-components';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
+import Apartment from './pages/Apartment';
 const GlobalStyle = createGlobalStyle`
 body{
   @font-face {
@@ -32,6 +33,7 @@ root.render(
       <Routes>
         <Route path="/" element= {<Home/>} />
         <Route path="/*" element= {<Error />} />
+        <Route path='/apartment' element= {<Apartment />} />
       </Routes>
     </Router>
   </React.StrictMode>
