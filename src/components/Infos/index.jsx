@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import colors from '../../utils/color';
 import '../../styles/apartment.css'
 import { useLocation } from 'react-router';
-import datas from '../../datas/logements.json'
 import Rate from '../Rate';
 
 
@@ -77,7 +76,7 @@ width: 40%;
 // Créer un state qui prend en compe l'index de chaque img.
 // Naviguer entre les images à chaque clique
 function Infos(){
-
+    const datas = undefined;
     const locationObject = useLocation()
     const myApartment = datas.filter(data => data.id === locationObject.state)
     const {title, location, tags, host} = myApartment[0];

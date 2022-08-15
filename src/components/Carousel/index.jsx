@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, } from "@fortawesome/free-solid-svg-icons";
@@ -26,13 +26,26 @@ justify-content: center;
     right: 7%;
 }
 `
+const ApartmentImg = styled.img`
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  z-index: 0;
+`;
 
-function Carousel(){
+function Carousel({pictures, title}){
+    console.log(pictures);
+    const [index, setIndex] = useState(0)
+    const nextApartment = () => {
+        setIndex(index +1)
+    }
     return(
     <ApartmentCarousel>
         <FontAwesomeIcon icon= {faChevronLeft} size={'2x'} className='chevron-left chevron' />
-        <FontAwesomeIcon icon= {faChevronRight} size={'2x'} className='chevron-right chevron' />
-    </ApartmentCarousel>)
+            <ApartmentImg src={pictures[index]} alt ={title} />
+        <FontAwesomeIcon icon= {faChevronRight} size={'2x'} className='chevron-right chevron'  onClick={nextApartment}/>
+    </ApartmentCarousel>
+    )
 }
 
 export default Carousel;

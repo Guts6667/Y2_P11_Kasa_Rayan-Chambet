@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import '../../styles/apartment.css'
 import { useLocation } from 'react-router';
-import datas from '../../datas/logements.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import colors from '../../utils/color';
@@ -20,6 +19,7 @@ color: ${colors.primary};
 `
 
 function Rate(){
+    const datas = undefined;
     const locationObject = useLocation()
     const myApartment = datas.filter(data => data.id === locationObject.state)
     const {rating} = myApartment[0];
@@ -52,10 +52,7 @@ function Rate(){
            }
            {scale.map((greyStar) => (
             <FontAwesomeIcon icon={faStar} size={'1x'} className="greyStar" key={`${greyStar}-${scale.indexOf(greyStar)}`} />
-           ))}
-          
-            
-           
+           ))}     
         </HostRate>
     )
 }

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/color';
-import datas from '../../datas/logements.json'
 import { Link } from 'react-router-dom';
 
 const ApartmentLink = styled(Link)`
@@ -39,20 +38,29 @@ font-weight: 500;
 
 `
 
-const storeId = (e) => {
-    console.log(e.currentTarget)
-    
-}
+
 
 
 function Cards() {
     
+    const [datas, setDatas] = useState([]);
+
+    
+useEffect(() => {
+    fetch('/datas/logements.json')
+    .then((res) => res.json())
+    .then((res) => {
+        setDatas(res);
+        console.log(res);
+    })
+    
+}, [])
 
     return (
 
         datas.map((data => (
-            <ApartmentLink to ='/apartment' state={data.id} key={`${data.title}-${data.id}`}>
-                <Card  onClick = {storeId} >
+            <ApartmentLink to ={`/apartment/${data.id}`} key={`${data.title}-${data.id}`}>
+                <Card  >
                     <CardImg src={data.cover} alt = {data.title} />
                     <CardTitleWrapper>
                         <CardTitle>{data.title}</CardTitle>

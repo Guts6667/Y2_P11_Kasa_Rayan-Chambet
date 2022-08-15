@@ -3,7 +3,6 @@ import React from 'react';
 import Hero from '../../components/Hero';
 import styled from 'styled-components';
 import Cards from '../../components/Cards/Cards';
-// import datas from '../../datas/logements.json'
 import colors from '../../utils/color';
 
 // Voir avec Ryade comment modifier l'url de manière à afficher le nom de l'appartement

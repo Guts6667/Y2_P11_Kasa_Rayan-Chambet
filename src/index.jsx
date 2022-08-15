@@ -32,8 +32,8 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element= {<Home/>} />
+        <Route path='/apartment/:id' element= {<Apartment />} />
         <Route path="/*" element= {<Error />} />
-        <Route path='/apartment' element= {<Apartment />} />
       </Routes>
     </Router>
   </React.StrictMode>
