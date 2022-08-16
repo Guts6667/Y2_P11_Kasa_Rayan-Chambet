@@ -11,6 +11,7 @@ const ApartmentWrapper = styled.main`
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  padding: 0 5% 0 5%;
   h1 {
     color: ${colors.primary};
     font-weight: 500;

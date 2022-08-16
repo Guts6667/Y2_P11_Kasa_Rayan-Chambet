@@ -1,5 +1,4 @@
 import React from 'react';
-// import { PropTypes } from 'prop-types';
 import Hero from '../../components/Hero';
 import styled from 'styled-components';
 import Cards from '../../components/Cards/Cards';
@@ -11,6 +10,7 @@ const HomeWrapper = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
+padding: 0 5% 0 5%;
 `
 const CardWrapper = styled.main`
 margin-top: 50px;
@@ -19,7 +19,7 @@ flex-flow: wrap;
 justify-content: space-evenly;
 width: 100%;
 border-radius: 10px;
-background-color: ${colors.secondary};
+/* background-color: ${colors.secondary}; */
 padding: 20px;
 `
 function Home(){

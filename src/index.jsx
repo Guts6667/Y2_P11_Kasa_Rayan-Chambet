@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Error from './components/Error';
-// import Hero from './components/Hero';
 import './index.css';
 import Home from './pages/Home';
 import { createGlobalStyle } from 'styled-components';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
 import Apartment from './pages/Apartment';
+import Footer from './components/Footer';
 const GlobalStyle = createGlobalStyle`
 body{
   @font-face {
@@ -18,8 +18,29 @@ body{
   *{
     font-family: "Montserrat", 'Sans-serif';
   }
+  header{
+    padding: 5%;
+  }
+  
   color : white;
-  padding : 5%;
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100px;
+  margin: 0 !important;
+  text-align: center;
+  font-size: 12px;
+  grid-row-gap: 10px;
+  img{
+    width: 50px;
+    height: auto;
+  }
 }
 `
 
@@ -35,6 +56,7 @@ root.render(
         <Route path='/apartment/:id' element= {<Apartment />} />
         <Route path="/*" element= {<Error />} />
       </Routes>
+      <Footer />
     </Router>
   </React.StrictMode>
 );
