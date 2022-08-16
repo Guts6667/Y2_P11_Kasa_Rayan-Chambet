@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import colors from '../../utils/color';
 import '../../styles/apartment.css'
 import Rate from '../Rate';
+import Description from '../Description';
 
 
 
@@ -70,13 +71,18 @@ align-items: center;
 width: 40%;
 
 `
+const ApartmentInfos = styled.div`
+display : flex;
+flex-direction: column;
+
+`
 
 //Importer fontawesome : Render les chevrons. puis utliser map pour créer un composant image pour chaque img
 // Créer un state qui prend en compe l'index de chaque img.
 // Naviguer entre les images à chaque clique
-function Infos({title, host, tags, location, rating}){
+function Infos({title, host, tags, location, rating, description}){
 
-    console.log({title, host, tags, location});
+    console.log({title, host, tags, location, description});
     
 
 
@@ -99,6 +105,9 @@ function Infos({title, host, tags, location, rating}){
                         <HostPicture src={host.picture}/>
                     </InfoHost>
                 </InfoHostWrapper>
+                <ApartmentInfos>
+                    <Description description = {description} />
+                </ApartmentInfos>
             </InfoWrapper>
     )
 }

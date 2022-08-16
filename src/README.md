@@ -54,9 +54,6 @@ console.log(`Cette alerte s'affiche à chaque appel du useEffect`);
 
 ## Questions
 
-Plus j'avance dans le cours et plus j'arrive à faire les exercices par contre il y a eu un problème au niveau du P3C2, j'ai galéré à cause du async que je ne maîtrise toujours pas (même la solution à l'exo était pas bonne car la fonction était appelée sur un élément qui n'était pas encore affichée)
-Peut-on voir le async ensemble ? (Je sens que c'est une vraie barrière)
-
 ## React Router
 
 On installe React Router ainsi:
