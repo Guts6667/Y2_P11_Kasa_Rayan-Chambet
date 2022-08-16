@@ -34,14 +34,28 @@ const ApartmentImg = styled.img`
 `;
 
 function Carousel({pictures, title}){
-    console.log(pictures);
-    const [index, setIndex] = useState(0)
+    let [index, setIndex] = useState(0)
     const nextApartment = () => {
-        setIndex(index +1)
+        if(index === pictures.length -1){
+            
+            setIndex(0)
+        }
+        else{
+            setIndex(index += 1)
+        } 
+    }
+    const previousApartment = () => {
+        if(index === 0){
+            setIndex(pictures.length -1)
+            console.log(('ici'));
+        }
+        else{
+            setIndex(index -=1)
+        }
     }
     return(
     <ApartmentCarousel>
-        <FontAwesomeIcon icon= {faChevronLeft} size={'2x'} className='chevron-left chevron' />
+        <FontAwesomeIcon icon= {faChevronLeft} size={'2x'} className='chevron-left chevron' onClick={previousApartment} />
             <ApartmentImg src={pictures[index]} alt ={title} />
         <FontAwesomeIcon icon= {faChevronRight} size={'2x'} className='chevron-right chevron'  onClick={nextApartment}/>
     </ApartmentCarousel>
