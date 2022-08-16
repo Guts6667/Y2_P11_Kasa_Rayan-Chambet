@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import '../../styles/apartment.css'
-import { useLocation } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import colors from '../../utils/color';
@@ -18,11 +17,8 @@ color: ${colors.primary};
 }
 `
 
-function Rate(){
-    const datas = undefined;
-    const locationObject = useLocation()
-    const myApartment = datas.filter(data => data.id === locationObject.state)
-    const {rating} = myApartment[0];
+function Rate({rating}){
+    
     parseInt(rating)
     const rate = [];
 
@@ -30,13 +26,12 @@ function Rate(){
         rate.push(i)
     }
     const myRate = rate.map((rate) => rate +1)
-    console.log(myRate.length);
+    console.log(`It's a ${rate.length} star(s) apartment`);
     let scale = [];
     if(myRate.length !== 5){
         for(let i = myRate.length; i < 5; i++ ){
             scale.push(i)
         }
-        console.log(scale);
     }
     else{
         console.log("You found a 5 stars apartment!");

@@ -47,17 +47,18 @@ function Carousel({pictures, title}){
     const previousApartment = () => {
         if(index === 0){
             setIndex(pictures.length -1)
-            console.log(('ici'));
         }
         else{
             setIndex(index -=1)
         }
     }
+
+   
     return(
     <ApartmentCarousel>
-        <FontAwesomeIcon icon= {faChevronLeft} size={'2x'} className='chevron-left chevron' onClick={previousApartment} />
+        <FontAwesomeIcon icon= {faChevronLeft} size={'2x'} className='chevron-left chevron' onClick={previousApartment}  />
             <ApartmentImg src={pictures[index]} alt ={title} />
-        <FontAwesomeIcon icon= {faChevronRight} size={'2x'} className='chevron-right chevron'  onClick={nextApartment}/>
+        <FontAwesomeIcon icon= {faChevronRight} size={'2x'} className='chevron-right chevron'  onClick={nextApartment} />
     </ApartmentCarousel>
     )
 }

@@ -5,7 +5,7 @@ import "../../styles/apartment.css";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Carousel from "../../components/Carousel";
-// import Infos from "../../components/Infos";
+import Infos from "../../components/Infos";
 
 const ApartmentWrapper = styled.main`
   display: flex;
@@ -47,9 +47,9 @@ return (
         <h1>{apartment.title}</h1>
         {apartment && (
           <Carousel pictures={apartment.pictures} title={apartment.title} />
-        )}
 
-        {/* <Infos />  */}
+        )}
+        <Infos title = { apartment.title } location = {apartment.location} tags = {apartment.tags} host = {apartment.host} rating = {apartment.rating} />
       </ApartmentWrapper>
     )
   );

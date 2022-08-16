@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/color';
 import '../../styles/apartment.css'
-import { useLocation } from 'react-router';
 import Rate from '../Rate';
 
 
@@ -75,11 +74,12 @@ width: 40%;
 //Importer fontawesome : Render les chevrons. puis utliser map pour créer un composant image pour chaque img
 // Créer un state qui prend en compe l'index de chaque img.
 // Naviguer entre les images à chaque clique
-function Infos(){
-    const datas = undefined;
-    const locationObject = useLocation()
-    const myApartment = datas.filter(data => data.id === locationObject.state)
-    const {title, location, tags, host} = myApartment[0];
+function Infos({title, host, tags, location, rating}){
+
+    console.log({title, host, tags, location});
+    
+
+
     
     return(
             <InfoWrapper>
@@ -93,7 +93,7 @@ function Infos(){
                     )))}
                 </TagWrapper>
                 <InfoHostWrapper>
-                    <Rate />
+                    <Rate rating = {rating} />
                     <InfoHost>
                         <HostName>{host.name}</HostName>
                         <HostPicture src={host.picture}/>
