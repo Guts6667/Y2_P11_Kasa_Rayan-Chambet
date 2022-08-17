@@ -35,7 +35,7 @@ const InfoWrapper = styled.div`
 display: flex;
 flex-direction: column;
 margin: 10px 0 10px 0;
-grid-row-gap: 5px;
+grid-row-gap: 10px;
 h1{
     margin-bottom: 5px;
 }
@@ -80,7 +80,7 @@ flex-direction: column;
 //Importer fontawesome : Render les chevrons. puis utliser map pour créer un composant image pour chaque img
 // Créer un state qui prend en compe l'index de chaque img.
 // Naviguer entre les images à chaque clique
-function Infos({title, host, tags, location, rating, description}){
+function Infos({title, host, tags, location, rating, description , equipments}){
 
     console.log({title, host, tags, location, description});
     

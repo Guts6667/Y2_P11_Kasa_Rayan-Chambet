@@ -1,63 +1,72 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp, faChevronDown, } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import colors from "../../utils/color";
 
-
 const DescriptionWrapper = styled.div`
-display: flex;
-flex-direction: column;
-color: white;
-background-color: ${colors.four};
-border-radius: 5px;
-.header-description{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: ${colors.four};
+  border-radius: 5px;
+  .header-description {
     background-color: ${colors.primary};
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
     border-radius: 5px;
-    
-}
-.description-content{
+  }
+  .description-content {
     color: ${colors.primary};
     padding: 10px;
-}
-.hidden{
+  }
+  .hidden {
     display: none;
-}
-`
-function Description({description}){
+  }
+  .dropdown-btn {
+    cursor: pointer;
+  }
+`;
 
-    const text = document.querySelector('.description-content');
-    const chevronUp = document.querySelector('.fa-chevron-up');
-    const chevronDown = document.querySelector('.fa-chevron-down');
-const showDropdown = () => {
-        chevronUp.classList.add('hidden');
-        chevronDown.classList.remove('hidden');
-        text.classList.remove('hidden');
+function Description({ description }) {
+  const dropDownFunc = () => {
+    const text = document.querySelector(".description-content");
+    const chevronUp = document.querySelector(".fa-chevron-up");
+    const chevronDown = document.querySelector(".fa-chevron-down");
 
-}
-    const hideDropdown = () => {
-        text.classList.add('hidden');
-        chevronDown.classList.add('hidden');
-        chevronUp.classList.remove('hidden')
+    if (chevronDown.classList.contains("hidden")) {
+      chevronUp.classList.add("hidden");
+      chevronDown.classList.remove("hidden");
+      text.classList.remove("hidden");
+    } else {
+      text.classList.add("hidden");
+      chevronDown.classList.add("hidden");
+      chevronUp.classList.remove("hidden");
     }
-        
-    
-   
+  };
 
-    return(
-        <DescriptionWrapper>
-            <div className="header-description">
-                <span>Description</span>
-                <FontAwesomeIcon icon={faChevronUp} size= "1x" onClick={showDropdown}/>
-                <FontAwesomeIcon icon={faChevronDown} size= "1x" className="hidden" onClick={hideDropdown}/>
-            </div>
-                <p className="description-content hidden">{ description }</p>
-        </DescriptionWrapper>
-    )
+  return (
+    <DescriptionWrapper>
+      <div className="header-description">
+        <span>Description</span>
+        <FontAwesomeIcon
+          icon={faChevronUp}
+          size="1x"
+          className="dropdown-btn"
+          onClick={dropDownFunc}
+        />
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          size="1x"
+          className="hidden dropdown-btn"
+          onClick={dropDownFunc}
+        />
+      </div>
+      <p className="description-content hidden">{description}</p>
+    </DescriptionWrapper>
+  );
 }
 
 export default Description;
