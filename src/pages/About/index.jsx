@@ -37,7 +37,7 @@ height: 250px;
 object-fit: cover;
 border-radius: 10px;
 `
-
+// utliser closest()pour cibler le chevron le plus proche plutôt que de déclarer des variables uniques et plus globales
 function About(){
 return(
     <AboutWrapper >
