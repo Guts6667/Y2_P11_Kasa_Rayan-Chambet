@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import colors from '../../utils/color';
 import { Link } from 'react-router-dom';
 
 const ApartmentLink = styled(Link)`
@@ -9,11 +8,18 @@ text-decoration: none;
 width: 100%;
 height: 250px;
 margin-bottom: 20px;
+
+    @media only screen and (min-width: 768px){
+	width: 45%;
+}
+
+@media only screen and (min-width: 1024px){
+	width: 30%;
+}
 `
 
 
 const Card = styled.article`
-background-color: ${colors.primary};
 overflow: hidden;
 border-radius: 10px;
 width: 100%;
@@ -22,7 +28,7 @@ width: 100%;
 const CardImg = styled.img`
 width: 100%;
 object-fit: cover;
-height: 75%;
+height: 100%;
 `
 const CardTitleWrapper = styled.div`
 height: 25%;
@@ -30,6 +36,9 @@ display: flex;
 align-items: center;
 padding-left: 10px;
 padding-right: 10px;
+position: sticky;
+bottom: 0px;
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 `
 const CardTitle = styled.span`
 color: white;

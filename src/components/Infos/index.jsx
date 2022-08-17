@@ -76,12 +76,19 @@ const ApartmentInfos = styled.div`
 display : flex;
 flex-direction: column;
 grid-row-gap: 10px;
+@media only screen and (min-width: 768px){
+	flex-direction: row;
+    justify-content: space-between;
+    grid-column-gap: 10px;
+    > *{
+        width: 50%;
+    }
+   
+}
 
 `
 
-//Importer fontawesome : Render les chevrons. puis utliser map pour créer un composant image pour chaque img
-// Créer un state qui prend en compe l'index de chaque img.
-// Naviguer entre les images à chaque clique
+
 function Infos({title, host, tags, location, rating, description , equipments}){
 
     console.log({title, host, tags, location, description, equipments});
@@ -109,7 +116,7 @@ function Infos({title, host, tags, location, rating, description , equipments}){
                 </InfoHostWrapper>
                 <ApartmentInfos>
                     <Description title = {'Description'} content = {description} />
-                    <Equipments equipments={equipments} />
+                    <Equipments title = {'Equipments'} equipments={equipments} />
                 </ApartmentInfos>
             </InfoWrapper>
     )

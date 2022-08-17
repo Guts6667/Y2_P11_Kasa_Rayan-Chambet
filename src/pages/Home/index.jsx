@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Cards from '../../components/Cards/Cards';
 import colors from '../../utils/color';
 
-// Voir avec Ryade comment modifier l'url de manière à afficher le nom de l'appartement
 
 const HomeWrapper = styled.div`
 display: flex;
@@ -16,7 +15,7 @@ const CardWrapper = styled.main`
 margin-top: 50px;
 display: flex;
 flex-flow: wrap;
-justify-content: space-evenly;
+justify-content: space-between;
 width: 100%;
 border-radius: 10px;
 /* background-color: ${colors.secondary}; */

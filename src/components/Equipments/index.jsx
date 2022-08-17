@@ -31,7 +31,7 @@ const EquipmentsWrapper = styled.div`
   }
 `;
 
-function Equipments({ equipments }) {
+function Equipments({ title, equipments }) {
     console.log(equipments);
   const dropDownFunc = () => {
     const text = document.querySelector(".equipments-content");
@@ -52,7 +52,7 @@ function Equipments({ equipments }) {
   return (
     <EquipmentsWrapper>
       <div className="header-equipments">
-        <span>Equipments</span>
+        <span>{title}</span>
         <FontAwesomeIcon
           icon={faChevronUp}
           size="1x"
