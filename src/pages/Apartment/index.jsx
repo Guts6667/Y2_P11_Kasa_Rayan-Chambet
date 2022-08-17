@@ -11,7 +11,7 @@ const ApartmentWrapper = styled.main`
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding: 0 5% 0 5%;
   h1 {
     color: ${colors.primary};
@@ -51,7 +51,7 @@ return (
           <Carousel pictures={apartment.pictures} title={apartment.title} />
 
         )}
-        <Infos title = { apartment.title } location = {apartment.location} tags = {apartment.tags} host = {apartment.host} rating = {apartment.rating} description ={apartment.description}/>
+        <Infos title = { apartment.title } location = {apartment.location} tags = {apartment.tags} host = {apartment.host} rating = {apartment.rating} description ={apartment.description} equipments = {apartment.equipments}/>
       </ApartmentWrapper>
     )
   );

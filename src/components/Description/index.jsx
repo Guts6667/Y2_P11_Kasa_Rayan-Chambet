@@ -30,41 +30,41 @@ const DescriptionWrapper = styled.div`
   }
 `;
 
-function Description({ description }) {
+function Description({ title, content }) {
   const dropDownFunc = () => {
     const text = document.querySelector(".description-content");
     const chevronUp = document.querySelector(".fa-chevron-up");
     const chevronDown = document.querySelector(".fa-chevron-down");
 
-    if (chevronDown.classList.contains("hidden")) {
-      chevronUp.classList.add("hidden");
-      chevronDown.classList.remove("hidden");
+    if (chevronUp.classList.contains("hidden")) {
+      chevronDown.classList.add("hidden");
+      chevronUp.classList.remove("hidden");
       text.classList.remove("hidden");
     } else {
       text.classList.add("hidden");
-      chevronDown.classList.add("hidden");
-      chevronUp.classList.remove("hidden");
+      chevronUp.classList.add("hidden");
+      chevronDown.classList.remove("hidden");
     }
   };
 
   return (
     <DescriptionWrapper>
       <div className="header-description">
-        <span>Description</span>
+        <span>{title}</span>
         <FontAwesomeIcon
           icon={faChevronUp}
           size="1x"
-          className="dropdown-btn"
+          className="hidden dropdown-btn"
           onClick={dropDownFunc}
         />
         <FontAwesomeIcon
           icon={faChevronDown}
           size="1x"
-          className="hidden dropdown-btn"
+          className="dropdown-btn"
           onClick={dropDownFunc}
         />
       </div>
-      <p className="description-content hidden">{description}</p>
+      <p className="description-content hidden">{content}</p>
     </DescriptionWrapper>
   );
 }

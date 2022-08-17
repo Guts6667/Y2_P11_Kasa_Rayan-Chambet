@@ -4,6 +4,7 @@ import colors from '../../utils/color';
 import '../../styles/apartment.css'
 import Rate from '../Rate';
 import Description from '../Description';
+import Equipments from '../Equipments';
 
 
 
@@ -68,12 +69,13 @@ margin-right: 10px;
 const InfoHost = styled.div`
 display: flex;
 align-items: center;
-width: 40%;
+justify-content: end;
 
 `
 const ApartmentInfos = styled.div`
 display : flex;
 flex-direction: column;
+grid-row-gap: 10px;
 
 `
 
@@ -82,7 +84,7 @@ flex-direction: column;
 // Naviguer entre les images à chaque clique
 function Infos({title, host, tags, location, rating, description , equipments}){
 
-    console.log({title, host, tags, location, description});
+    console.log({title, host, tags, location, description, equipments});
     
 
 
@@ -106,7 +108,8 @@ function Infos({title, host, tags, location, rating, description , equipments}){
                     </InfoHost>
                 </InfoHostWrapper>
                 <ApartmentInfos>
-                    <Description description = {description} />
+                    <Description title = {'Description'} content = {description} />
+                    <Equipments equipments={equipments} />
                 </ApartmentInfos>
             </InfoWrapper>
     )

@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
 import Apartment from './pages/Apartment';
 import Footer from './components/Footer';
+import About from './pages/About'
 const GlobalStyle = createGlobalStyle`
 body{
   @font-face {
@@ -54,6 +55,7 @@ root.render(
       <Routes>
         <Route path="/" element= {<Home/>} />
         <Route path='/apartment/:id' element= {<Apartment />} />
+        <Route path='/about' element = {<About />} />
         <Route path="/*" element= {<Error />} />
       </Routes>
       <Footer />
