@@ -33,7 +33,7 @@ footer{
   background-color: black;
   color: white;
   width: 100%;
-  height: 150px;
+  height: 100px;
   margin-top: 50px;
   text-align: center;
   font-size: 12px;

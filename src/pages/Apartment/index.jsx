@@ -41,7 +41,6 @@ useEffect(() => {
 return (
     apartment && (
       <ApartmentWrapper>
-        <h1>{apartment.title}</h1>
         {apartment && (
           <Carousel pictures={apartment.pictures} title={apartment.title} />
 

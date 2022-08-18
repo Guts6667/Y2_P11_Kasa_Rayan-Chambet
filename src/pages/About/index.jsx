@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import aboutImg from "../../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png"
-import DropDownText from "../../components/Description";
+import DropDownText from "../../components/Dropdown";
+
 
 
 

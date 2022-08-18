@@ -4,7 +4,7 @@ import colors from '../../utils/color';
 import '../../styles/apartment.css'
 import Rate from '../Rate';
 import Equipments from '../Equipments';
-import DropDownText from '../Description';
+import DropDownText from '../Dropdown';
 
 
 
@@ -13,7 +13,7 @@ import DropDownText from '../Description';
 const TagWrapper = styled.div`
 display: flex;
 flex-flow: wrap;
-grid-column-gap: 5px;
+grid-gap: 5px;
 
 
 `
