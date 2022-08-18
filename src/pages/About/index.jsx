@@ -30,6 +30,7 @@ display: flex;
 flex-direction: column;
 padding: 5%;
 grid-row-gap: 50px;
+margin: 50px 0;
 `
 const AboutImg =styled.img`
 width: 100%;

@@ -33,13 +33,17 @@ footer{
   background-color: black;
   color: white;
   width: 100%;
-  height: 100px;
-  margin: 0 !important;
+  height: 150px;
+  margin-top: 50px;
   text-align: center;
   font-size: 12px;
   grid-row-gap: 10px;
+  @media only screen and (min-width: 768px){
+    font-weight: 500;
+    font-size: 24px;
+  }
   img{
-    width: 50px;
+    width: 100px;
     height: auto;
   }
 }
