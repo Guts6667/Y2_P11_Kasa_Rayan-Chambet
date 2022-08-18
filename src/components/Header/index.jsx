@@ -33,17 +33,14 @@ function Header() {
     let location = useLocation()
     
         useEffect(() => {
-            console.log(location.pathname);
             if(location.pathname === '/about'){
                 setAboutActive(false)
-                console.log('about actif');
             }
             else{
                 setAboutActive(true)
             }
             if(location.pathname === '/'){
                 setHomeActive(false)
-                console.log('home actif');
             }
             else{
                 setHomeActive(true)

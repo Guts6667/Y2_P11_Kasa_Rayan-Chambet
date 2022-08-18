@@ -50,7 +50,6 @@ grid-row-gap: 15px;
     align-self: center;
 }
 `
-// utliser closest()pour cibler le chevron le plus proche plutôt que de déclarer des variables uniques et plus globales
 function About(){
 return(
     <AboutWrapper >

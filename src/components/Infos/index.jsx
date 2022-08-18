@@ -20,12 +20,12 @@ grid-gap: 5px;
 const Tag = styled.div`
 background-color: ${colors.primary};
 color: white !important;
-padding: 5px;
+padding: 5px 10px;
 border-radius: 5px;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 25%;
+width: auto;
 
 span{
     font-weight: 500;
