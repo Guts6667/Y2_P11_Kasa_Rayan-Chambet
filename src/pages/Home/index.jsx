@@ -10,6 +10,7 @@ display: flex;
 align-items: center;
 flex-direction: column;
 padding: 0 5% 0 5%;
+
 `
 const CardWrapper = styled.main`
 margin-top: 50px;
@@ -18,10 +19,14 @@ flex-flow: wrap;
 justify-content: space-between;
 width: 100%;
 border-radius: 10px;
-/* background-color: ${colors.secondary}; */
 padding: 20px;
+@media only screen and (min-width: 768px){
+    background-color: ${colors.four};
+    width: auto;
+}
 `
 function Home(){
+
     return(
         <HomeWrapper>
             <Hero />

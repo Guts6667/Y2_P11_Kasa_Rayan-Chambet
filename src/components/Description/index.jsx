@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -8,8 +8,8 @@ const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
-  background-color: ${colors.four};
   border-radius: 5px;
+  width: 100%;
   .header-description {
     background-color: ${colors.primary};
     display: flex;
@@ -17,56 +17,52 @@ const DescriptionWrapper = styled.div`
     align-items: center;
     padding: 5px;
     border-radius: 5px;
+    z-index: 01;
+    @media only screen and (min-width: 768px){
+    font-weight: 500;
+    font-size: 18px;
   }
-  .description-content {
-    color: ${colors.primary};
-    padding: 10px;
-  }
-  .hidden {
-    display: none;
   }
   .dropdown-btn {
     cursor: pointer;
   }
+ p{
+  background-color: ${colors.four};
+  position: relative;
+  top: -5px;
+  z-index: 0;
+  margin-block-start: 0;
+  border-radius: 0px 0 10px 10px;
+  padding: 15px;
+  color: ${colors.primary};
+ }
+  
 `;
 
-function Description({ title, content }) {
-  const dropDownFunc = () => {
-    const text = document.querySelector(".description-content");
-    const chevronUp = document.querySelector(".fa-chevron-up");
-    const chevronDown = document.querySelector(".fa-chevron-down");
+function DropDownText({ title, content }) {
+  
+  const [isOpen, setIsOpen] = useState(false);
 
-    if (chevronUp.classList.contains("hidden")) {
-      chevronDown.classList.add("hidden");
-      chevronUp.classList.remove("hidden");
-      text.classList.remove("hidden");
-    } else {
-      text.classList.add("hidden");
-      chevronUp.classList.add("hidden");
-      chevronDown.classList.remove("hidden");
-    }
-  };
-
+  const toggling = () =>{
+    setIsOpen(!isOpen)
+  } 
   return (
     <DescriptionWrapper>
       <div className="header-description">
         <span>{title}</span>
-        <FontAwesomeIcon
-          icon={faChevronUp}
-          size="1x"
-          className="hidden dropdown-btn"
-          onClick={dropDownFunc}
-        />
-        <FontAwesomeIcon
-          icon={faChevronDown}
-          size="1x"
-          className="dropdown-btn"
-          onClick={dropDownFunc}
-        />
+
+        {isOpen || (
+          <FontAwesomeIcon icon={faChevronDown} size="1x" className="dropdown-btn" onClick={toggling} />
+        )}
+        {isOpen && (
+          <FontAwesomeIcon icon={faChevronUp} size="1x" className="dropdown-btn" onClick={toggling} />
+        )}
       </div>
-      <p className="description-content hidden">{content}</p>
+      {isOpen &&(
+        <p>{content}</p>
+      )}
     </DescriptionWrapper>
   );
 }
 
-export default Description;
+export default DropDownText;

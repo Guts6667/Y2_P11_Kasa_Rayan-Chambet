@@ -10,7 +10,7 @@ import Infos from "../../components/Infos";
 const ApartmentWrapper = styled.main`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 50px;
   padding: 0 5% 0 5%;
   h1 {
@@ -20,11 +20,6 @@ const ApartmentWrapper = styled.main`
   }
 `;
 
-
-
-//Importer fontawesome : Render les chevrons. puis utliser map pour créer un composant image pour chaque img
-// Créer un state qui prend en compe l'index de chaque img.
-// Naviguer entre les images à chaque clique
 function Apartment() {
   const [apartment, setApartment] = useState(undefined);
   const apartmentId = useParams();

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import logo from '../../assets/LOGO.png'
 import { Link, useLocation,} from 'react-router-dom';
@@ -17,44 +17,53 @@ const StyledLink = styled(Link)`
     @media only screen and (min-width: 768px){
 	font-size: 24px;
 }
-    
-    /* ${({ active }) => active && `
-    text-decoration: underline;
-  `} */
-  
+ 
     `
     const HeaderWrapper = styled.header`
     align-items: center;
     display : flex;
     justify-content : space-between;
+    padding-bottom: 5px;
     `
 
 function Header() {
+
+    const [isAboutActive, setAboutActive] = useState(false);
+    const [isHomeActive, setHomeActive] = useState(false);
     let location = useLocation()
-    useEffect(() => {
-        let nav = document.querySelector('nav');
-        let about = nav.lastElementChild.firstChild;
-        let home = nav.firstElementChild.lastChild;
-        if(location.pathname.includes('about')){
-            about.classList.add('active')
-            home.classList.remove('active')
-        }
-        else if( !location.pathname.includes('about') && location.pathname !== '/'){
-            about.classList.remove('active');
-            home.classList.remove('active')
-        }
-         else{
-            about.classList.remove('active')
-            home.classList.add('active')
-        }
-    },[location.pathname] )
+    
+        useEffect(() => {
+            console.log(location.pathname);
+            if(location.pathname === '/about'){
+                setAboutActive(false)
+                console.log('about actif');
+            }
+            else{
+                setAboutActive(true)
+            }
+            if(location.pathname === '/'){
+                setHomeActive(false)
+                console.log('home actif');
+            }
+            else{
+                setHomeActive(true)
+            }
+             
+        }, [location.pathname])
+    
     
     return(
         <HeaderWrapper>
             <img src={logo} alt= 'Logo Kasa'/>
             <nav>
-                <StyledLink to = '/' ><span>Accueil</span></StyledLink>
-                <StyledLink to = '/about'><span>A propos</span></StyledLink>
+                <StyledLink to = '/'>
+                    {isHomeActive && (<span> Accueil </span>)}
+                    {isHomeActive || (<span className='active'> Accueil </span>)}
+                </StyledLink>
+                <StyledLink to = '/about'>
+                    {isAboutActive && (<span> A propos </span>)}
+                    {isAboutActive || (<span className='active'> A propos </span>)}
+                    </StyledLink>
             </nav>
         </HeaderWrapper>
     )

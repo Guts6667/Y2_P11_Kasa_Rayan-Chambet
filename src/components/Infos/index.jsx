@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import colors from '../../utils/color';
 import '../../styles/apartment.css'
 import Rate from '../Rate';
-import Description from '../Description';
 import Equipments from '../Equipments';
+import DropDownText from '../Description';
 
 
 
@@ -14,6 +14,8 @@ const TagWrapper = styled.div`
 display: flex;
 flex-flow: wrap;
 grid-column-gap: 5px;
+
+
 `
 const Tag = styled.div`
 background-color: ${colors.primary};
@@ -23,7 +25,7 @@ border-radius: 5px;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 20%;
+width: 25%;
 
 span{
     font-weight: 500;
@@ -46,17 +48,24 @@ h1{
 .tag{
     color: white;
 }
+
 `
 const InfoHostWrapper = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+@media only screen and (min-width: 768px){
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    grid-row-gap: 10px;
+} 
+
 `
 
 const HostPicture = styled.img`
 border-radius: 50%;
 object-fit: cover;
-width: 35%;
+width: 20%;
 align-self: flex-end;
 
 `
@@ -70,6 +79,7 @@ const InfoHost = styled.div`
 display: flex;
 align-items: center;
 justify-content: end;
+
 
 `
 const ApartmentInfos = styled.div`
@@ -115,9 +125,10 @@ function Infos({title, host, tags, location, rating, description , equipments}){
                     </InfoHost>
                 </InfoHostWrapper>
                 <ApartmentInfos>
-                    <Description title = {'Description'} content = {description} />
+                    <DropDownText title = {'Description'} content = {description} />
                     <Equipments title = {'Equipments'} equipments={equipments} />
                 </ApartmentInfos>
+                
             </InfoWrapper>
     )
 }

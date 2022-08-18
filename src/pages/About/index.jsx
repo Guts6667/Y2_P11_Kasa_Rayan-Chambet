@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Description from "../../components/Description"
 import aboutImg from "../../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png"
+import DropDownText from "../../components/Description";
 
 
 
@@ -29,22 +29,35 @@ const AboutWrapper = styled.section`
 display: flex;
 flex-direction: column;
 padding: 5%;
-grid-row-gap: 10px;
+grid-row-gap: 50px;
 `
 const AboutImg =styled.img`
 width: 100%;
 height: 250px;
 object-fit: cover;
 border-radius: 10px;
+
+`
+const DropDownWrapper = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+grid-row-gap: 15px;
+@media only screen and (min-width: 768px){
+    width: 90%;
+    align-self: center;
+}
 `
 // utliser closest()pour cibler le chevron le plus proche plutôt que de déclarer des variables uniques et plus globales
 function About(){
 return(
     <AboutWrapper >
         <AboutImg src={aboutImg} alt ='Paysage montagneux' />
-        {AboutInfos.map((info) => (
-            <Description title={info.title} content = {info.content} key={`${info.title}-${AboutInfos.indexOf(info)}`} />
-        ))}
+        <DropDownWrapper>
+            {AboutInfos.map((info) => (
+                <DropDownText title={info.title} content = {info.content} key={`${info.title}-${AboutInfos.indexOf(info)}`} />
+            ))}
+        </DropDownWrapper>
     </AboutWrapper>
 
 
