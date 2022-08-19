@@ -101,7 +101,6 @@ grid-row-gap: 10px;
 
 function Infos({title, host, tags, location, rating, description , equipments}){
 
-    console.log({title, host, tags, location, description, equipments});
     
 
 

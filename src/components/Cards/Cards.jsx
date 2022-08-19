@@ -60,7 +60,6 @@ useEffect(() => {
     .then((res) => res.json())
     .then((res) => {
         setDatas(res);
-        console.log(res);
     })
     
 }, [])

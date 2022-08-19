@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Carousel from "../../components/Carousel";
 import Infos from "../../components/Infos";
+import Error from "../../components/Error";
 
 const ApartmentWrapper = styled.main`
   display: flex;
@@ -23,31 +24,46 @@ const ApartmentWrapper = styled.main`
 function Apartment() {
   const [apartment, setApartment] = useState(undefined);
   const apartmentId = useParams();
-
+  const [id, setValidId] = useState(true)
+  
 useEffect(() => {
     fetch('/datas/logements.json')
     .then((res) => res.json())
     .then((res) => {
-        console.log(res);
         const temp = res.filter((data) => data.id === apartmentId.id)[0]
-        console.log(temp);
         setApartment(temp)
+        if(temp){
+          setValidId(true)
+        }else{
+          setValidId(false)
+        }
         
     })
 },[apartmentId])
 
 
 
-return (
-    apartment && (
-      <ApartmentWrapper>
-        {apartment && (
-          <Carousel pictures={apartment.pictures} title={apartment.title} />
+if(id){
+  return (
+      apartment && (
+        <ApartmentWrapper>
+          {apartment && (
+            <Carousel pictures={apartment.pictures} title={apartment.title} />
+  
+          )}
+          <Infos title = { apartment.title } location = {apartment.location} tags = {apartment.tags} host = {apartment.host} rating = {apartment.rating} description ={apartment.description} equipments = {apartment.equipments}/>
+        </ApartmentWrapper>
+      )
+      
+    ) 
+    
+    
+} 
+  return (
+    <Error />
+  )
 
-        )}
-        <Infos title = { apartment.title } location = {apartment.location} tags = {apartment.tags} host = {apartment.host} rating = {apartment.rating} description ={apartment.description} equipments = {apartment.equipments}/>
-      </ApartmentWrapper>
-    )
-  );
+
+    
 }
 export default Apartment;

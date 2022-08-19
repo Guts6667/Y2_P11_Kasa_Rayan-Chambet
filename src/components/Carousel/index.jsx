@@ -51,7 +51,6 @@ function Carousel({pictures, title}){
     let [index, setIndex] = useState(0)
     let [isMultiple, setIsMultiple] = useState(false);
     useEffect(() => {
-        console.log(pictures.length);
         if(pictures.length > 1){
             setIsMultiple(true)
         }
