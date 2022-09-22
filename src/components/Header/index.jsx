@@ -22,8 +22,14 @@ const StyledLink = styled(Link)`
     const HeaderWrapper = styled.header`
     align-items: center;
     display : flex;
-    justify-content : space-between;
+    justify-content : space-evenly;
     padding-bottom: 5px;
+    background: linear-gradient(180deg,rgba(30,30,30,.9),rgba(30,30,30,0));
+    position: fixed;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    top: 0;
     `
 
 function Header() {

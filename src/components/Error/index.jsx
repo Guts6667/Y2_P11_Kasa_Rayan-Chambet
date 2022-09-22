@@ -3,6 +3,7 @@ import styled from "styled-components"
 import colors from "../../utils/color"
 
 const ErrorWrapper = styled.div`
+margin: 120px 0;
 display: flex;
 justify-content: center;
 flex-direction: column;

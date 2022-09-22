@@ -13,7 +13,7 @@ padding: 0 5% 0 5%;
 
 `
 const CardWrapper = styled.main`
-margin-top: 50px;
+margin: 120px 0;
 display: flex;
 flex-flow: wrap;
 justify-content: space-between;

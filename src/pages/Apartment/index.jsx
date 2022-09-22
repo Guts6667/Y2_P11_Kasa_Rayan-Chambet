@@ -11,8 +11,8 @@ import Error from "../../components/Error";
 const ApartmentWrapper = styled.main`
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
-  margin-bottom: 50px;
+  margin-top: 120px;
+  margin-bottom: 100px;
   padding: 0 5% 0 5%;
   h1 {
     color: ${colors.primary};

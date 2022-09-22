@@ -7,7 +7,7 @@ const HeroWrapper = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: 50px;
+margin-top: 120px;
 height: 200px;
 width: 100%;
 border-radius: 10px;
